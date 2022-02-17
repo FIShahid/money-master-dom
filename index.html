@@ -15,27 +15,27 @@
   </head>
   <body>
     <header>
-        <h1 class="text-center mt-3 fw-bold text-success">Personal Balance Assistant</h1>
+        <h1 class="text-center fw-bold text-success">Personal Balance Assistant</h1>
     </header>
     <main>
         <section class="container">
            <div class="row justify-content-evenly pt-5 pb-5">
-            <div class="col-md-5 mt-5">
+            <div class="col-md-5 ">
                 <div>
                     <img src="./image/money.jpg" class="img-fluid rounded" alt="">
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5" id="second-div">
                 <h4 class="text-center text-primary fw-bold mt-3">Income</h4>
                 <div>
-                    <h6 class="text-center mt-3">Income: <input class="input" type="number" id="income-input"></h6>
+                    <h6 class="text-center mt-3">Income: <input class="input" type="number" placeholder="Enter Your Income" id="income-input"></h6>
                 </div>
                 <div>
                     <h4 class="text-center text-warning fw-bold ">Expenses</h4>
                     <div id="expence-value">
-                        <h6 class="text-center ">Food: <input class="input" type="number" id="food-input"></h6>
-                    <h6 class="text-center mt-1">Rent: <input class="input" type="number" id="rent-input"></h6>
-                    <h6 class="text-center mt-1">Clothes: <input class="input" type="number" id="cloth-input"></h6>                    
+                        <h6 class="text-center ">Food: <input class="input" type="number" placeholder="Enter Food Expence" id="food-input"></h6>
+                    <h6 class="text-center mt-1">Rent: <input class="input" type="number"  placeholder="Enter Your Rent" id="rent-input"></h6>
+                    <h6 class="text-center mt-1">Clothes: <input class="input" type="number"  placeholder="Your Shopping Amount" id="cloth-input"></h6>                    
                 </div>
                 <br>
              </div>
@@ -46,10 +46,10 @@
                <h5 class="text-center mt-2">Total Expenses: <span id="total-expences"></span></h5>
                <h5 class="text-center mt-2">Balance: <span id="total-balance"></span></h5>
 
-               <h6 class="mt-3 text-center">Save <input class="input w-25" type="number" id="saving-percent"> <span>  %  </span> <button id="save-button" type="button" class="btn btn-primary text-center btn-sm fw-bold">Save</button></h6>
+               <h6 class="text-center">Save <input class="input w-25" type="number" id="saving-percent"> <span>  %  </span> <button id="save-button" type="button" class="btn btn-primary text-center btn-sm fw-bold">Save</button></h6>
                <br>
-               <h5 class="text-center mt-3">Saving Amount:<span id="saving-balance"></span></h5>
-               <h5 class="text-center mt-3"> Remaining Balance:<span id="remaining-balance"></span></h5>
+               <h5 class="text-center">Saving Amount:<span id="saving-balance"></span></h5>
+               <h5 class="text-center"> Remaining Balance:<span id="remaining-balance"></span></h5>
                
             </div>
            </div>
