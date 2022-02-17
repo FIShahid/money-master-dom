@@ -23,3 +23,6 @@ body{
 #second-div{
     background-color: #f8f8f8;
 }
+#save-button{
+    width: 120px;
+}
