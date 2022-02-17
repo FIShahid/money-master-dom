@@ -1,17 +1,34 @@
+//Input Function
+
+function inputField(inputItem) {
+    let input = document.getElementById(inputItem);
+    let inputText = input.value;
+    let inputNumber = parseFloat(inputText);
+    return inputNumber;
+}
+
+function inputField(convertToNumber) {
+    const input = document.getElementById(convertToNumber);
+
+    const inputText = input.value;
+    const inputNumber = parseFloat(inputText);
+
+    return inputNumber
+}
+
 document.getElementById('calculate-button').addEventListener('click', function () {
 
     //get expense value
-    let foodInput = document.getElementById('food-input').value;
-    //inputField('food');
-    let rentInput = document.getElementById('rent-input').value;
-    let clothInput = document.getElementById('cloth-input').value;
+    let foodInput = inputField('food-input');
+    let rentInput = inputField('rent-input');
+    let clothInput = inputField('cloth-input');
     let totalExpenses = document.getElementById('total-expences');
-    let finalExpences = totalExpenses.innerText = parseFloat(foodInput) + parseFloat(rentInput) + parseFloat(clothInput);
+    let finalExpences = totalExpenses.innerText = foodInput + rentInput + clothInput;
 
     //get Income Value
 
-    let incomeInput = document.getElementById('income-input').value;
-    let balance = document.getElementById('total-balance');
+    let incomeInput = inputField('income-input')
+    let balance = inputField('total-balance')
 
     balance.innerText = incomeInput;
 
@@ -19,36 +36,36 @@ document.getElementById('calculate-button').addEventListener('click', function (
     document.getElementById('total-balance').innerText = updatedBalance;
 
     //Error Handling
-    if(foodInput<0 || rentInput<0 || clothInput<0){
+    if (foodInput < 0 || rentInput < 0 || clothInput < 0) {
         alert('Input Field Can not Be Negative');
-        return
+
     }
-    if(finalExpences>incomeInput){
+    if (finalExpences > incomeInput) {
         alert('You Do Not Have Sufficient Amount')
-        return;
+
     }
-    
-    
-})
+});
 
 //Saving Calculation
-document.getElementById('save-button').addEventListener('click', function () {
-    let incomeInput = document.getElementById('income-input').value;
-    let savingPercentage = document.getElementById('saving-percent').value;
-    let percent = incomeInput * (savingPercentage / 100);
 
-    document.getElementById('saving-balance').innerText = percent;
+document.getElementById('save-button').addEventListener('click', function () {
+
+    let incomeInput = inputField('income-input')
+    let savingPercentage = inputField('saving-percent')
+    let savingCalculation = incomeInput * (savingPercentage / 100);
+
+    document.getElementById('saving-balance').innerText = savingCalculation;
+
 
     //Remaining Balance
 
     let remainingBalance = document.getElementById('remaining-balance');
     let newBalance = document.getElementById('total-balance').innerText;
     //Error Handling
-    if(percent>newBalance){
-        alert('You do not have Enough Fund')
-        return;
+    if (savingCalculation > newBalance) {
+        alert('You do not have Enough Balance');
+
     }
+    remainingBalance.innerText = parseFloat(newBalance) - parseFloat(savingCalculation);
 
-    remainingBalance.innerText = parseFloat(newBalance) - parseFloat(percent);
-
-})
+});
